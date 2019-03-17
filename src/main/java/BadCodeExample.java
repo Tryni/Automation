@@ -12,6 +12,8 @@ public class BadCodeExample {
         element.sendKeys("Selenium");
         element.submit();
 
+
+ 
     }
 
 }
