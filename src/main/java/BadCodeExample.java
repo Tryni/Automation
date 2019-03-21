@@ -6,46 +6,29 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import static java.lang.Thread.*;
 
 public class BadCodeExample {
     public static void main(String[] args) {
         System.out.println("Hello World!!!");
-        //ве операции : 1- обявляем переменную WebDriver driver and 2- b присвоение значения переменнной chromeDriver
         WebDriver driver = new ChromeDriver();
-        //посредник между кодом и браузером
         driver.get("https://www.google.com");
-        //записываем текст ноды в переменную элемент
-        //WebElement element = driver.findElement(By.name("q"));
         WebElement element = driver.findElement(By.xpath("//input[@name='q']"));
-
-
-        //input[@name='q']
         element.sendKeys("Selenium");
         element.sendKeys(Keys.ENTER);
-        //submit by click on the enter
-        //element.submit();
-        // конкатинация строк  element.sendKeys("Selenium"+ Keys.ENTER);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        List<WebElement> result = driver.findElements(By.xpath("//div[@class='g']"));
+        for(int i=0;i<result.size();i++)
+        {
+            System.out.println(i+". "+result.get(i).getText());
+        }
+        driver.close();
+        System.out.println("Quantity of links that have in a title word SELENIUM is  "+result.size());
+
     }
 }
-//alt enter - import of the web elementh
-//driver-
-/*public class BadCodeExample{
-    public static void main(String[] args) {
-        System.out.println("FirstLogIn");
-        WebDriver driver=new ChromeDriver();
-            driver.get("https://easyxpress.com.ua/log-in");
-        WebElement usernameElement = driver.findElement(By.id("loginform-email"));
-        WebElement passwordElement = driver.findElement(By.id("loginform-pass"));
-        usernameElement.sendKeys("etrunova89@gmail.com");
-        passwordElement.sendKeys("Sid0renk089");
-        passwordElement.submit();
-
-
-        // Conclude a test
-        driver.quit();
-
-*/
-
 
 
 
