@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-import java.util.Set;
+
 import java.util.concurrent.TimeUnit;
 
 public class HomeWork3 {
