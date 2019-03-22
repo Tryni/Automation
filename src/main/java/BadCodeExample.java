@@ -23,12 +23,6 @@ public class BadCodeExample {
 
         List<WebElement> result = driver.findElements(By.xpath("//div[@class='g']"));
 
-       /* for (WebElement result: result) {
-            System.out.println(result.getText());
-        }
-        */
-        //for (int i = 0; i < result.size(); i++) System.out.println(i + ". " + result.get(i).getText());
-
         System.out.println("Quantity of links that have in a title word SELENIUM is  " + result.size());
 
         for (int i = 0; i < result.size(); i++) {
@@ -40,20 +34,13 @@ public class BadCodeExample {
                 System.out.println("Search term not found");
             }
             driver.close();
+
+
         }
     }
 }
 
-        /*System.out.println("Quantity of links that have in a title word SELENIUM is  " + result.size());
-        for (int i = 0; i < result.size(); i++) {
-            if (driver.findElement(By.linkText("Selenium")).isDisplayed()) {
-                System.out.println("The Selenium is here");
-            } else {
-                System.out.println("The word is not here");
-            }
 
-        }
-        */
 
 
 
