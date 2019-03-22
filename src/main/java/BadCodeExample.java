@@ -30,9 +30,7 @@ public class BadCodeExample {
             System.out.println(i + ". " + result.get(i).getText());
             if (resultString.contains(searchTerm.toLowerCase())) {
                 System.out.println("Serch Term found");
-            } else {
-                System.out.println("Search term not found");
-            }
+            } else System.out.println("Search term not found");
             driver.close();
 
 
